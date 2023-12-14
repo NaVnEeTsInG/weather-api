@@ -9,17 +9,24 @@ function Cmp1() {
     const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4a1f8a61b74546825af1e0be106e797b`;
     const [humidity, setHumidity] = useState();
     const [temp, settemp] = useState();
-
-     useEffect(() => {
+    const [icon,seticon]   = useState();
+    
+    useEffect(() => {
         axios.get(baseURL).then((response) => {
 
             setHumidity(response.data.main.humidity);
             // console.log(response.data.main.humidity);
-            settemp(response.data.main.temp);
-     
+            settemp(response.data.main.temp-273);
+            const icon=response.data.weather[0].icon;
+            let imgpath=`https://openweathermap.org/img/w/${icon}.png`;
+            seticon(imgpath);
+
         }).catch(error => {
+            
             setHumidity("No Data");
             settemp("No data");
+            seticon("No data");
+
             //setError(error);
         });
 
@@ -47,6 +54,9 @@ function Cmp1() {
              <p>Temperature : {(temp) ? temp : "No Data "}</p>
 {/* <p>jgyufyuig</p */} <p>Humidity: {(humidity) ? humidity : "No Data"}</p>
           
+          <img src={icon}></img>
+'
+
         </center>
     </div>;
 }
