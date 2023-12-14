@@ -8,22 +8,24 @@ function Cmp1() {
     const [city, setCity] = useState('Varanasi');
     const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4a1f8a61b74546825af1e0be106e797b`;
     const [humidity, setHumidity] = useState();
+    const [temp, settemp] = useState();
 
-    useEffect(() => {
+     useEffect(() => {
         axios.get(baseURL).then((response) => {
 
             setHumidity(response.data.main.humidity);
-            console.log(response.data.main.humidity);
-
+            // console.log(response.data.main.humidity);
+            settemp(response.data.main.temp);
+     
         }).catch(error => {
             setHumidity("No Data");
-
+            settemp("No data");
             //setError(error);
         });
 
     }, [city]);
 
-    const cityChange = (event) => {
+     const cityChange = (event) => {
         let city = event.target.value;
 
         setCity(city);
@@ -42,8 +44,9 @@ function Cmp1() {
     return <div>
         <center><p>ENTER YOUR CITY </p>
             <input type="text" value={city} onChange={cityChange}/>
-            <p>Humidity: {(humidity) ? humidity : "No Data"}</p>
-
+             <p>Temperature : {(temp) ? temp : "No Data "}</p>
+{/* <p>jgyufyuig</p */} <p>Humidity: {(humidity) ? humidity : "No Data"}</p>
+          
         </center>
     </div>;
 }
