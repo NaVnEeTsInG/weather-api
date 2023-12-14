@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Cmp1 from './components/Cmp1';
 
 function App() {
   return (
@@ -7,14 +8,21 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>hfjfgkjgjgjkkjtuytu5657
-          hhhhhhhhhhhh jbjbv ak vjdbv Edit <code>src/App.js</code> and save to reload.
+          hhhhhhhhhhhh aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          jbjbv ak vjdbv Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
+          */}
+         
+        <Cmp1></Cmp1> 
+        
           Learn React
         </a>
       </header>
@@ -23,3 +31,4 @@ function App() {
 }
 
 export default App;
+
