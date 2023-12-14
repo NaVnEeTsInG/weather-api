@@ -40,8 +40,8 @@ function Cmp1() {
     </div>);
 
     return <div>
-        <center>
-            <input type="text" value={city} onChange={cityChange} > ENTER CITY NAME </input>
+        <center><p>ENTER YOUR CITY </p>
+            <input type="text" value={city} onChange={cityChange}/>
             <p>Humidity: {(humidity) ? humidity : "No Data"}</p>
 
         </center>
