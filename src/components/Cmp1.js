@@ -51,7 +51,7 @@ function Cmp1() {
     return <div>
         <center><p>ENTER YOUR CITY </p>
             <input type="text" value={city} onChange={cityChange}/>
-             <p>Temperature : {(temp) ? temp : "No Data "}</p>
+             <p>Temperature : {(temp) ? temp : "No Data "}</p>kelvin
 {/* <p>jgyufyuig</p */} <p>Humidity: {(humidity) ? humidity : "No Data"}</p>
           
           <img src={icon}></img>
